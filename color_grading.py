@@ -228,136 +228,6 @@ def main():
         grader = AdvancedColorGrading()
 
         # Group settings into collapsible sections
-        # Sidebar presets
-        with st.sidebar.expander("Presets"):
-            preset = st.selectbox("Choose a Preset", ["None", "Vintage", "Moody", "Grunge", "Horror", "Midnight", "Nostalgia"])
-
-        params = {}
-
-        # Apply preset settings
-        if preset == "Vintage":
-            params.update({
-                'brightness': 0.2,
-                'contrast': -0.3,
-                'saturation': 0.7,
-                'sharpness': 0.3,
-                'exposure': 0.1,
-                'halation': 0.1,
-                'vignette': 0.5,
-                'temperature': 0.3,
-                'tint': 0.2,
-                'hue_color': "#ffcc99",
-                'hue_strength': 0.2,
-                'gradient_color1': "#d4a373",
-                'gradient_color2': "#ffe8d6",
-                'gradient_intensity': 0.3,
-                'red_curve': [0.0, 0.5, 0.8],
-                'green_curve': [0.0, 0.4, 0.7],
-                'blue_curve': [0.1, 0.3, 0.6]
-            })
-        elif preset == "Moody":
-            params.update({
-                'brightness': -0.2,
-                'contrast': 0.4,
-                'saturation': 0.6,
-                'sharpness': 0.5,
-                'exposure': -0.1,
-                'halation': 0.0,
-                'vignette': 0.7,
-                'temperature': -0.2,
-                'tint': 0.1,
-                'hue_color': "#004466",
-                'hue_strength': 0.3,
-                'gradient_color1': "#001f3f",
-                'gradient_color2': "#005f87",
-                'gradient_intensity': 0.4,
-                'red_curve': [0.0, 0.3, 0.6],
-                'green_curve': [0.0, 0.4, 0.5],
-                'blue_curve': [0.0, 0.5, 0.7]
-            })
-        elif preset == "Grunge":
-            params.update({
-                'brightness': -0.3,
-                'contrast': 0.2,
-                'saturation': 0.5,
-                'sharpness': 0.6,
-                'exposure': -0.1,
-                'halation': 0.1,
-                'vignette': 0.6,
-                'temperature': 0.0,
-                'tint': 0.0,
-                'hue_color': "#3d3d3d",
-                'hue_strength': 0.4,
-                'gradient_color1': "#4d4d4d",
-                'gradient_color2': "#737373",
-                'gradient_intensity': 0.5,
-                'red_curve': [0.0, 0.2, 0.4],
-                'green_curve': [0.0, 0.2, 0.4],
-                'blue_curve': [0.0, 0.3, 0.5]
-            })
-        elif preset == "Horror":
-            params.update({
-                'brightness': -0.4,
-                'contrast': 0.5,
-                'saturation': 0.4,
-                'sharpness': 0.8,
-                'exposure': -0.2,
-                'halation': 0.2,
-                'vignette': 0.8,
-                'temperature': -0.3,
-                'tint': -0.2,
-                'hue_color': "#990000",
-                'hue_strength': 0.5,
-                'gradient_color1': "#660000",
-                'gradient_color2': "#330000",
-                'gradient_intensity': 0.6,
-                'red_curve': [0.0, 0.4, 0.9],
-                'green_curve': [0.0, 0.2, 0.4],
-                'blue_curve': [0.0, 0.1, 0.3]
-            })
-        elif preset == "Midnight":
-            params.update({
-                'brightness': -0.1,
-                'contrast': 0.3,
-                'saturation': 0.5,
-                'sharpness': 0.4,
-                'exposure': -0.2,
-                'halation': 0.0,
-                'vignette': 0.9,
-                'temperature': -0.4,
-                'tint': 0.1,
-                'hue_color': "#001a33",
-                'hue_strength': 0.3,
-                'gradient_color1': "#00264d",
-                'gradient_color2': "#001433",
-                'gradient_intensity': 0.7,
-                'red_curve': [0.0, 0.2, 0.4],
-                'green_curve': [0.0, 0.3, 0.6],
-                'blue_curve': [0.1, 0.6, 1.0]
-            })
-        elif preset == "Nostalgia":
-            params.update({
-                'brightness': 0.1,
-                'contrast': -0.2,
-                'saturation': 0.8,
-                'sharpness': 0.4,
-                'exposure': 0.1,
-                'halation': 0.1,
-                'vignette': 0.4,
-                'temperature': 0.2,
-                'tint': 0.2,
-                'hue_color': "#ffcc99",
-                'hue_strength': 0.3,
-                'gradient_color1': "#ffd1a4",
-                'gradient_color2': "#ffc299",
-                'gradient_intensity': 0.2,
-                'red_curve': [0.0, 0.6, 0.9],
-                'green_curve': [0.0, 0.5, 0.8],
-                'blue_curve': [0.0, 0.4, 0.7]
-            })
-        else:  # None
-            pass  # Default params remain unchanged
-
 
         with st.sidebar.expander("Basic Adjustments"):
             brightness = st.slider("Brightness", -2.0, 2.0, 0.0, 0.1)
@@ -419,21 +289,106 @@ def main():
             'blue_curve': blue_curve_points
         }
 
+        # Sidebar presets
+        with st.sidebar.expander("Presets"):
+            preset = st.selectbox("Choose a Preset", ["None", "Vintage", "Moody", "Grunge", "Horror", "Midnight", "Nostalgia"])
+
+        # Apply preset settings
+        if preset == "Vintage":
+            params = {
+                'brightness': 0.2,
+                'contrast': -0.1,
+                'saturation': 0.9,
+                'sharpness': 0.0,
+                'exposure': 0.05,
+                'halation': 0.01,
+                'vignette': 0.00,
+                'temperature': 0.25,
+                'tint': 0.0,
+                'hue_color': "#dec8a5",
+                'hue_strength': 0.3,
+                'gradient_color1': "#bda170",
+                'gradient_color2': "#a06b38",
+                'gradient_intensity': 0.3,
+                'red_curve': [0.09, 0.58, 1.00],
+                'green_curve': [0.0, 0.57, 1],
+                'blue_curve': [0.0, 0.4, 0.95]
+            })
+        elif preset == "Moody":
+            params = {
+                'brightness': 0.3,
+                'contrast': 0.2,
+                'saturation': 1.1,
+                'sharpness': 0.5,
+                'exposure': -0.1,
+                'halation': 0.02,
+                'vignette': 0.1,
+                'temperature': -0.15
+                'tint': 0.0,
+                'hue_color': "#2400ff",
+                'hue_strength': 0.05,
+                'gradient_color1': "#7d97c7",
+                'gradient_color2': "#28334e",
+                'gradient_intensity': 0.4,
+                'red_curve': [0.0, 0.43, 0.94],
+                'green_curve': [0.05, 0.46, 0.96],
+                'blue_curve': [0.04, 0.54, 1]
+            })
+        elif preset == "Grunge":
+            params = {
+                'brightness': 0.3,
+                'contrast': 0.2,
+                'saturation': 1.1,
+                'sharpness': 0.6,
+                'exposure': -0.1,
+                'halation': 0.02,
+                'vignette': 0.1,
+                'temperature': -0.15,
+                'tint': 0.0,
+                'hue_color': "#00ff3f",
+                'hue_strength': 0.15,
+                'gradient_color1': "#7d97c7",
+                'gradient_color2': "#284e2d",
+                'gradient_intensity': 0.5,
+                'red_curve': [0.0, 0.43, 0.94],
+                'green_curve': [0.05, 0.51, 0.96],
+                'blue_curve': [0.04, 0.54, 1]
+            })
+            
+        elif preset == "Nostalgia":
+            params = {
+                'brightness': 0.3,
+                'contrast': 0.3,
+                'saturation': 1.2,
+                'sharpness': 0.5,
+                'exposure': -0.05,
+                'halation': 0.02,
+                'vignette': 0.1,
+                'temperature': -0.15,
+                'tint': 0.0,
+                'hue_color': "#ffc500",
+                'hue_strength': 0.15,
+                'gradient_color1': "#e538aa",
+                'gradient_color2': "#e2983b",
+                'gradient_intensity': 0.4,
+                'red_curve': [0.17, 0.43, 0.94],
+                'green_curve': [0.05, 0.51, 0.96],
+                'blue_curve': [0.17, 0.54, 1]
+            })
+        else:  # None
+            pass  # Default params remain unchanged
+
 
         graded_image, gradient_image, smoothed_image, grad_norm_map, alpha_map = grader.color_grade_image(original_image, params)
 
 
-        st.sidebar.header("Intermediate Steps")
         gradient_vis = (gradient_image * 255).astype(np.uint8)
-        st.sidebar.image(gradient_vis, caption="Gradient Magnitude")
 
         if grad_norm_map is not None:
             grad_norm_vis = (grad_norm_map * 255).astype(np.uint8)
-            st.sidebar.image(grad_norm_vis, caption="Normalized Gradient Map")
 
         if alpha_map is not None:
             alpha_vis = (alpha_map * 255).astype(np.uint8)
-            st.sidebar.image(alpha_vis, caption="Alpha Map")
 
         col1, col2 = st.columns(2)
         with col1:
