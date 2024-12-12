@@ -323,7 +323,7 @@ def main():
                 'exposure': -0.1,
                 'halation': 0.02,
                 'vignette': 0.1,
-                'temperature': -0.15
+                'temperature': -0.15,
                 'tint': 0.0,
                 'hue_color': "#2400ff",
                 'hue_strength': 0.05,
