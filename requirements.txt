@@ -1,4 +1,4 @@
 streamlit
 numpy
-pencv-python-headless
+opencv-python-headless
 plotly
