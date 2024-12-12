@@ -313,7 +313,7 @@ def main():
                 'red_curve': [0.09, 0.58, 1.00],
                 'green_curve': [0.0, 0.57, 1],
                 'blue_curve': [0.0, 0.4, 0.95]
-            })
+            }
         elif preset == "Moody":
             params = {
                 'brightness': 0.3,
@@ -333,7 +333,7 @@ def main():
                 'red_curve': [0.0, 0.43, 0.94],
                 'green_curve': [0.05, 0.46, 0.96],
                 'blue_curve': [0.04, 0.54, 1]
-            })
+            }
         elif preset == "Grunge":
             params = {
                 'brightness': 0.3,
@@ -353,7 +353,7 @@ def main():
                 'red_curve': [0.0, 0.43, 0.94],
                 'green_curve': [0.05, 0.51, 0.96],
                 'blue_curve': [0.04, 0.54, 1]
-            })
+            }
             
         elif preset == "Nostalgia":
             params = {
@@ -374,7 +374,7 @@ def main():
                 'red_curve': [0.17, 0.43, 0.94],
                 'green_curve': [0.05, 0.51, 0.96],
                 'blue_curve': [0.17, 0.54, 1]
-            })
+            }
         else:  # None
             pass  # Default params remain unchanged
 
