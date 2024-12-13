@@ -262,7 +262,7 @@ def main():
         }
         
         # Select preset from sidebar
-        preset = st.selectbox("Choose a preset", options=["None", "Vintage", "Moody", "Grunge", "Nostalgia"])
+        preset = st.sidebar.selectbox("Choose a preset", options=["None", "Vintage", "Moody", "Grunge", "Nostalgia"])
         
         # Get the preset values
         preset_values = presets[preset]
