@@ -229,6 +229,45 @@ def main():
 
         # Group settings into collapsible sections
 
+        with st.sidebar.expander("Basic Adjustments"):
+            brightness = st.slider("Brightness", -2.0, 2.0, 0.0, 0.1)
+            contrast = st.slider("Contrast", -1.0, 1.0, 0.0, 0.1)
+            saturation = st.slider("Saturation", 0.0, 2.0, 1.0, 0.1)
+            sharpness = st.slider("Sharpness", 0.0, 1.0, 0.5, 0.05)
+
+        with st.sidebar.expander("Creative Adjustments"):
+            exposure = st.slider("Exposure", -0.5, 0.5, 0.0, 0.05)
+            halation = st.slider("Halation", 0.0, 0.2, 0.0, 0.01)
+            vignette = st.slider("Vignette", 0.0, 1.0, 0.0, 0.05)
+
+        with st.sidebar.expander("Color Adjustments"):
+            temperature = st.slider("Temperature", -0.5, 0.5, 0.0, 0.05)
+            tint = st.slider("Tint", -0.5, 0.5, 0.0, 0.05)
+            hue_color = st.color_picker("Select a Hue Color", "#00ffff")
+            hue_strength = st.slider("Hue Strength", 0.0, 1.0, 0.0, 0.05)
+
+        with st.sidebar.expander("Gradient Mapping"):
+            gradient_color1 = st.color_picker("Gradient Color 1", "#ff0000")
+            gradient_color2 = st.color_picker("Gradient Color 2", "#0000ff")
+            gradient_intensity = st.slider("Gradient Intensity", 0.0, 1.0, 0.0, 0.1)
+
+        with st.sidebar.expander("RGB Curves"):
+            red_curve_points = [
+                st.slider("Red Curve Point 1", 0.0, 1.0, 0.0, 0.01),
+                st.slider("Red Curve Point 2", 0.0, 1.0, 0.5, 0.01),
+                st.slider("Red Curve Point 3", 0.0, 1.0, 1.0, 0.01)
+            ]
+            green_curve_points = [
+                st.slider("Green Curve Point 1", 0.0, 1.0, 0.0, 0.01),
+                st.slider("Green Curve Point 2", 0.0, 1.0, 0.5, 0.01),
+                st.slider("Green Curve Point 3", 0.0, 1.0, 1.0, 0.01)
+            ]
+            blue_curve_points = [
+                st.slider("Blue Curve Point 1", 0.0, 1.0, 0.0, 0.01),
+                st.slider("Blue Curve Point 2", 0.0, 1.0, 0.5, 0.01),
+                st.slider("Blue Curve Point 3", 0.0, 1.0, 1.0, 0.01)
+            ]
+
         # Sidebar presets
         with st.sidebar.expander("Presets"):
             preset = st.selectbox("Choose a Preset", ["None", "Vintage", "Moody", "Grunge", "Nostalgia"])
@@ -313,46 +352,7 @@ def main():
         else:  # None
             pass  # Default params remain unchanged
 
-        with st.sidebar.expander("Basic Adjustments"):
-            brightness = st.slider("Brightness", -2.0, 2.0, 0.0, 0.1)
-            contrast = st.slider("Contrast", -1.0, 1.0, 0.0, 0.1)
-            saturation = st.slider("Saturation", 0.0, 2.0, 1.0, 0.1)
-            sharpness = st.slider("Sharpness", 0.0, 1.0, 0.5, 0.05)
-
-        with st.sidebar.expander("Creative Adjustments"):
-            exposure = st.slider("Exposure", -0.5, 0.5, 0.0, 0.05)
-            halation = st.slider("Halation", 0.0, 0.2, 0.0, 0.01)
-            vignette = st.slider("Vignette", 0.0, 1.0, 0.0, 0.05)
-
-        with st.sidebar.expander("Color Adjustments"):
-            temperature = st.slider("Temperature", -0.5, 0.5, 0.0, 0.05)
-            tint = st.slider("Tint", -0.5, 0.5, 0.0, 0.05)
-            hue_color = st.color_picker("Select a Hue Color", "#00ffff")
-            hue_strength = st.slider("Hue Strength", 0.0, 1.0, 0.0, 0.05)
-
-        with st.sidebar.expander("Gradient Mapping"):
-            gradient_color1 = st.color_picker("Gradient Color 1", "#ff0000")
-            gradient_color2 = st.color_picker("Gradient Color 2", "#0000ff")
-            gradient_intensity = st.slider("Gradient Intensity", 0.0, 1.0, 0.0, 0.1)
-
-        with st.sidebar.expander("RGB Curves"):
-            red_curve_points = [
-                st.slider("Red Curve Point 1", 0.0, 1.0, 0.0, 0.01),
-                st.slider("Red Curve Point 2", 0.0, 1.0, 0.5, 0.01),
-                st.slider("Red Curve Point 3", 0.0, 1.0, 1.0, 0.01)
-            ]
-            green_curve_points = [
-                st.slider("Green Curve Point 1", 0.0, 1.0, 0.0, 0.01),
-                st.slider("Green Curve Point 2", 0.0, 1.0, 0.5, 0.01),
-                st.slider("Green Curve Point 3", 0.0, 1.0, 1.0, 0.01)
-            ]
-            blue_curve_points = [
-                st.slider("Blue Curve Point 1", 0.0, 1.0, 0.0, 0.01),
-                st.slider("Blue Curve Point 2", 0.0, 1.0, 0.5, 0.01),
-                st.slider("Blue Curve Point 3", 0.0, 1.0, 1.0, 0.01)
-            ]
-
-
+        
         params = {
             'brightness': brightness,
             'contrast': contrast,
