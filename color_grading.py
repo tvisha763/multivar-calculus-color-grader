@@ -348,13 +348,17 @@ def main():
         graded_image, gradient_image, smoothed_image, grad_norm_map, alpha_map = grader.color_grade_image(original_image, params)
 
 
+        st.sidebar.header("Intermediate Steps")
         gradient_vis = (gradient_image * 255).astype(np.uint8)
+        st.sidebar.image(gradient_vis, caption="Gradient Magnitude")
 
         if grad_norm_map is not None:
             grad_norm_vis = (grad_norm_map * 255).astype(np.uint8)
+            st.sidebar.image(grad_norm_vis, caption="Normalized Gradient Map")
 
         if alpha_map is not None:
             alpha_vis = (alpha_map * 255).astype(np.uint8)
+            st.sidebar.image(alpha_vis, caption="Alpha Map")
 
         col1, col2 = st.columns(2)
         with col1:
