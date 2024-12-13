@@ -290,6 +290,7 @@ def main():
             gradient_color2 = st.color_picker("Gradient Color 2", preset_values["gradient_color2"])
             gradient_intensity = st.slider("Gradient Intensity", 0.0, 1.0, preset_values["gradient_intensity"], 0.1)
         
+        # Update RGB Curves to handle each point separately
         with st.sidebar.expander("RGB Curves"):
             red_curve_points = [
                 st.slider("Red Curve Point 1", 0.0, 1.0, preset_values["red_curve"][0], 0.01),
@@ -306,6 +307,7 @@ def main():
                 st.slider("Blue Curve Point 2", 0.0, 1.0, preset_values["blue_curve"][1], 0.01),
                 st.slider("Blue Curve Point 3", 0.0, 1.0, preset_values["blue_curve"][2], 0.01)
             ]
+
 
 
         
