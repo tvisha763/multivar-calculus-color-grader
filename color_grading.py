@@ -228,44 +228,57 @@ def main():
         grader = AdvancedColorGrading()
 
 
+        # Updated presets with individual curve points
         presets = {
             "None": {  # Original values when no preset is selected
                 "brightness": 0.0, "contrast": 0.0, "saturation": 1.0, "sharpness": 0.5, "exposure": 0.0,
                 "halation": 0.0, "vignette": 0.0, "temperature": 0.0, "tint": 0.0, "hue_color": "#00ffff",
                 "hue_strength": 0.0, "gradient_color1": "#ff0000", "gradient_color2": "#0000ff", "gradient_intensity": 0.0,
-                "red_curve": [0.0, 0.5, 1.0], "green_curve": [0.0, 0.5, 1.0], "blue_curve": [0.0, 0.5, 1.0]
+                "red_curve1": 0.0, "red_curve2": 0.5, "red_curve3": 1.0,
+                "green_curve1": 0.0, "green_curve2": 0.5, "green_curve3": 1.0,
+                "blue_curve1": 0.0, "blue_curve2": 0.5, "blue_curve3": 1.0
             },
             "Vintage": {
                 "brightness": 0.2, "contrast": -0.1, "saturation": 0.9, "sharpness": 0.0, "exposure": 0.05,
                 "halation": 0.01, "vignette": 0.00, "temperature": 0.25, "tint": 0.0, "hue_color": "#dec8a5",
                 "hue_strength": 0.3, "gradient_color1": "#bda170", "gradient_color2": "#a06b38", "gradient_intensity": 0.3,
-                "red_curve": [0.09, 0.58, 1.00], "green_curve": [0.0, 0.57, 1], "blue_curve": [0.0, 0.4, 0.95]
+                "red_curve1": 0.09, "red_curve2": 0.58, "red_curve3": 1.00,
+                "green_curve1": 0.0, "green_curve2": 0.57, "green_curve3": 1,
+                "blue_curve1": 0.0, "blue_curve2": 0.4, "blue_curve3": 0.95
             },
             "Moody": {
                 "brightness": 0.3, "contrast": 0.2, "saturation": 1.1, "sharpness": 0.5, "exposure": -0.1,
                 "halation": 0.02, "vignette": 0.1, "temperature": -0.15, "tint": 0.0, "hue_color": "#2400ff",
                 "hue_strength": 0.05, "gradient_color1": "#7d97c7", "gradient_color2": "#28334e", "gradient_intensity": 0.4,
-                "red_curve": [0.0, 0.43, 0.94], "green_curve": [0.05, 0.46, 0.96], "blue_curve": [0.04, 0.54, 1]
+                "red_curve1": 0.0, "red_curve2": 0.43, "red_curve3": 0.94,
+                "green_curve1": 0.05, "green_curve2": 0.46, "green_curve3": 0.96,
+                "blue_curve1": 0.04, "blue_curve2": 0.54, "blue_curve3": 1
             },
             "Grunge": {
                 "brightness": 0.3, "contrast": 0.2, "saturation": 1.1, "sharpness": 0.6, "exposure": -0.1,
                 "halation": 0.02, "vignette": 0.1, "temperature": -0.15, "tint": 0.0, "hue_color": "#00ff3f",
                 "hue_strength": 0.15, "gradient_color1": "#7d97c7", "gradient_color2": "#284e2d", "gradient_intensity": 0.5,
-                "red_curve": [0.0, 0.43, 0.94], "green_curve": [0.05, 0.51, 0.96], "blue_curve": [0.04, 0.54, 1]
+                "red_curve1": 0.0, "red_curve2": 0.43, "red_curve3": 0.94,
+                "green_curve1": 0.05, "green_curve2": 0.51, "green_curve3": 0.96,
+                "blue_curve1": 0.04, "blue_curve2": 0.54, "blue_curve3": 1
             },
             "Nostalgia": {
                 "brightness": 0.3, "contrast": 0.3, "saturation": 1.2, "sharpness": 0.5, "exposure": -0.05,
                 "halation": 0.02, "vignette": 0.1, "temperature": -0.15, "tint": 0.0, "hue_color": "#ffc500",
                 "hue_strength": 0.15, "gradient_color1": "#e538aa", "gradient_color2": "#e2983b", "gradient_intensity": 0.4,
-                "red_curve": [0.17, 0.43, 0.94], "green_curve": [0.05, 0.51, 0.96], "blue_curve": [0.17, 0.54, 1]
+                "red_curve1": 0.17, "red_curve2": 0.43, "red_curve3": 0.94,
+                "green_curve1": 0.05, "green_curve2": 0.51, "green_curve3": 0.96,
+                "blue_curve1": 0.17, "blue_curve2": 0.54, "blue_curve3": 1
             }
         }
+
         
         # Select preset from sidebar
         preset = st.sidebar.selectbox("Choose a preset", options=["None", "Vintage", "Moody", "Grunge", "Nostalgia"])
         
         # Get the preset values
         preset_values = presets[preset]
+
         
         # Update sliders and color pickers based on preset values
         with st.sidebar.expander("Basic Adjustments"):
@@ -293,19 +306,19 @@ def main():
         # Update RGB Curves to handle each point separately
         with st.sidebar.expander("RGB Curves"):
             red_curve_points = [
-                st.slider("Red Curve Point 1", 0.0, 1.0, preset_values["red_curve"][0], 0.01),
-                st.slider("Red Curve Point 2", 0.0, 1.0, preset_values["red_curve"][1], 0.01),
-                st.slider("Red Curve Point 3", 0.0, 1.0, preset_values["red_curve"][2], 0.01)
+                st.slider("Red Curve Point 1", 0.0, 1.0, float(preset_values["red_curve1"]), 0.01),
+                st.slider("Red Curve Point 2", 0.0, 1.0, float(preset_values["red_curve2"]), 0.01),
+                st.slider("Red Curve Point 3", 0.0, 1.0, float(preset_values["red_curve3"]), 0.01)
             ]
             green_curve_points = [
-                st.slider("Green Curve Point 1", 0.0, 1.0, preset_values["green_curve"][0], 0.01),
-                st.slider("Green Curve Point 2", 0.0, 1.0, preset_values["green_curve"][1], 0.01),
-                st.slider("Green Curve Point 3", 0.0, 1.0, preset_values["green_curve"][2], 0.01)
+                st.slider("Green Curve Point 1", 0.0, 1.0, float(preset_values["green_curve1"]), 0.01),
+                st.slider("Green Curve Point 2", 0.0, 1.0, float(preset_values["green_curve2"]), 0.01),
+                st.slider("Green Curve Point 3", 0.0, 1.0, float(preset_values["green_curve3"]), 0.01)
             ]
             blue_curve_points = [
-                st.slider("Blue Curve Point 1", 0.0, 1.0, preset_values["blue_curve"][0], 0.01),
-                st.slider("Blue Curve Point 2", 0.0, 1.0, preset_values["blue_curve"][1], 0.01),
-                st.slider("Blue Curve Point 3", 0.0, 1.0, preset_values["blue_curve"][2], 0.01)
+                st.slider("Blue Curve Point 1", 0.0, 1.0, float(preset_values["blue_curve1"]), 0.01),
+                st.slider("Blue Curve Point 2", 0.0, 1.0, float(preset_values["blue_curve2"]), 0.01),
+                st.slider("Blue Curve Point 3", 0.0, 1.0, float(preset_values["blue_curve3"]), 0.01)
             ]
 
 
@@ -358,4 +371,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
