@@ -291,90 +291,85 @@ def main():
 
         # Sidebar presets
         with st.sidebar.expander("Presets"):
-            preset = st.selectbox("Choose a Preset", ["None", "Vintage", "Moody", "Grunge", "Horror", "Midnight", "Nostalgia"])
+            preset = st.selectbox("Choose a Preset", ["None", "Vintage", "Moody", "Grunge", "Nostalgia"])
 
         # Apply preset settings
         if preset == "Vintage":
-            params = {
-                'brightness': 0.2,
-                'contrast': -0.1,
-                'saturation': 0.9,
-                'sharpness': 0.0,
-                'exposure': 0.05,
-                'halation': 0.01,
-                'vignette': 0.00,
-                'temperature': 0.25,
-                'tint': 0.0,
-                'hue_color': "#dec8a5",
-                'hue_strength': 0.3,
-                'gradient_color1': "#bda170",
-                'gradient_color2': "#a06b38",
-                'gradient_intensity': 0.3,
-                'red_curve': [0.09, 0.58, 1.00],
-                'green_curve': [0.0, 0.57, 1],
-                'blue_curve': [0.0, 0.4, 0.95]
-            }
+                brightness = 0.2
+                contrast = -0.1
+                saturation = 0.9
+                sharpness = 0.0
+                exposure = 0.05
+                halation = 0.01
+                vignette = 0.00
+                temperature = 0.25
+                tint = 0.0
+                hue_color = "#dec8a5"
+                hue_strength = 0.3
+                gradient_color1 = "#bda170"
+                gradient_color2 = "#a06b38"
+                gradient_intensity = 0.3
+                red_curve = [0.09, 0.58, 1.00]
+                green_curve = [0.0, 0.57, 1]
+                blue_curve = [0.0, 0.4, 0.95]
+    
         elif preset == "Moody":
-            params = {
-                'brightness': 0.3,
-                'contrast': 0.2,
-                'saturation': 1.1,
-                'sharpness': 0.5,
-                'exposure': -0.1,
-                'halation': 0.02,
-                'vignette': 0.1,
-                'temperature': -0.15,
-                'tint': 0.0,
-                'hue_color': "#2400ff",
-                'hue_strength': 0.05,
-                'gradient_color1': "#7d97c7",
-                'gradient_color2': "#28334e",
-                'gradient_intensity': 0.4,
-                'red_curve': [0.0, 0.43, 0.94],
-                'green_curve': [0.05, 0.46, 0.96],
-                'blue_curve': [0.04, 0.54, 1]
-            }
+                brightness = 0.3
+                contrast = 0.2
+                saturation = 1.1
+                sharpness = 0.5
+                exposure = -0.1
+                halation = 0.02
+                vignette = 0.1
+                temperature = -0.15
+                tint = 0.0
+                hue_color = "#2400ff"
+                hue_strength = 0.05
+                gradient_color1 = "#7d97c7"
+                gradient_color2 = "#28334e"
+                gradient_intensity = 0.4
+                red_curve = [0.0, 0.43, 0.94]
+                green_curve = [0.05, 0.46, 0.96]
+                blue_curve = [0.04, 0.54, 1]
+            
         elif preset == "Grunge":
-            params = {
-                'brightness': 0.3,
-                'contrast': 0.2,
-                'saturation': 1.1,
-                'sharpness': 0.6,
-                'exposure': -0.1,
-                'halation': 0.02,
-                'vignette': 0.1,
-                'temperature': -0.15,
-                'tint': 0.0,
-                'hue_color': "#00ff3f",
-                'hue_strength': 0.15,
-                'gradient_color1': "#7d97c7",
-                'gradient_color2': "#284e2d",
-                'gradient_intensity': 0.5,
-                'red_curve': [0.0, 0.43, 0.94],
-                'green_curve': [0.05, 0.51, 0.96],
-                'blue_curve': [0.04, 0.54, 1]
-            }
+                brightness = 0.3
+                contrast = 0.2
+                saturation = 1.1
+                sharpness = 0.6
+                exposure = -0.1
+                halation = 0.02
+                vignette = 0.1
+                temperature = -0.15
+                tint = 0.0
+                hue_color = "#00ff3f"
+                hue_strength = 0.15
+                gradient_color1 = "#7d97c7"
+                gradient_color2 = "#284e2d"
+                gradient_intensity = 0.5
+                red_curve = [0.0, 0.43, 0.94]
+                green_curve = [0.05, 0.51, 0.96]
+                blue_curve = [0.04, 0.54, 1]
             
         elif preset == "Nostalgia":
-            params = {
-                'brightness': 0.3,
-                'contrast': 0.3,
-                'saturation': 1.2,
-                'sharpness': 0.5,
-                'exposure': -0.05,
-                'halation': 0.02,
-                'vignette': 0.1,
-                'temperature': -0.15,
-                'tint': 0.0,
-                'hue_color': "#ffc500",
-                'hue_strength': 0.15,
-                'gradient_color1': "#e538aa",
-                'gradient_color2': "#e2983b",
-                'gradient_intensity': 0.4,
-                'red_curve': [0.17, 0.43, 0.94],
-                'green_curve': [0.05, 0.51, 0.96],
-                'blue_curve': [0.17, 0.54, 1]
-            }
+                brightness = 0.3
+                contrast = 0.3
+                saturation = 1.2
+                sharpness = 0.5
+                exposure = -0.05
+                halation = 0.02
+                vignette = 0.1
+                temperature = -0.15
+                tint = 0.0,
+                hue_color = "#ffc500"
+                hue_strength = 0.15
+                gradient_color1 = "#e538aa"
+                gradient_color2 = "#e2983b"
+                gradient_intensity = 0.4
+                red_curve = [0.17, 0.43, 0.94]
+                green_curve = [0.05, 0.51, 0.96]
+                blue_curve = [0.17, 0.54, 1]
+            
         else:  # None
             pass  # Default params remain unchanged
 
