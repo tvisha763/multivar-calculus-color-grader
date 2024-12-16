@@ -247,7 +247,7 @@ def main():
                 "blue_curve1": 0.0, "blue_curve2": 0.4, "blue_curve3": 0.95
             },
             "Moody": {
-                "brightness": 0.3, "contrast": 0.2, "saturation": 1.1, "sharpness": 0.5, "exposure": -0.1,
+                "brightness": 0.1, "contrast": 0.2, "saturation": 1.1, "sharpness": 0.5, "exposure": -0.05,
                 "halation": 0.02, "vignette": 0.1, "temperature": -0.15, "tint": 0.0, "hue_color": "#2400ff",
                 "hue_strength": 0.05, "gradient_color1": "#7d97c7", "gradient_color2": "#28334e", "gradient_intensity": 0.4,
                 "red_curve1": 0.0, "red_curve2": 0.43, "red_curve3": 0.94,
