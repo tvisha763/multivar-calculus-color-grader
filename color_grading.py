@@ -271,7 +271,7 @@ def main():
                 "blue_curve1": 0.04, "blue_curve2": 0.54, "blue_curve3": 1
             },
             "Nostalgia": {
-                "brightness": 0.3, "contrast": 0.3, "saturation": 1.2, "sharpness": 0.5, "exposure": -0.05,
+                "brightness": 0.0, "contrast": 0.3, "saturation": 1.2, "sharpness": 0.5, "exposure": 0.00,
                 "halation": 0.02, "vignette": 0.1, "temperature": -0.15, "tint": 0.0, "hue_color": "#ffc500",
                 "hue_strength": 0.15, "gradient_color1": "#e538aa", "gradient_color2": "#e2983b", "gradient_intensity": 0.4,
                 "red_curve1": 0.17, "red_curve2": 0.43, "red_curve3": 0.94,
