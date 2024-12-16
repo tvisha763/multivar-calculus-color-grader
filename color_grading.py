@@ -254,7 +254,7 @@ def main():
                 "green_curve1": 0.05, "green_curve2": 0.46, "green_curve3": 0.96,
                 "blue_curve1": 0.04, "blue_curve2": 0.54, "blue_curve3": 1
             },
-            "Grunge Warm": {
+            "Moss": {
                 "brightness": -0.1, "contrast": 0.2, "saturation": 1.5, "sharpness": 0.6, "exposure": 0.0,
                 "halation": 0.0, "vignette": 0.15, "temperature": 0.5, "tint": 0.2, "hue_color": "#00ff3f",
                 "hue_strength": 0.15, "gradient_color1": "#7d97c7", "gradient_color2": "#284e2d", "gradient_intensity": 0.1,
@@ -262,7 +262,7 @@ def main():
                 "green_curve1": 0.05, "green_curve2": 0.51, "green_curve3": 0.96,
                 "blue_curve1": 0.04, "blue_curve2": 0.54, "blue_curve3": 1
             },
-            "Grunge Cool": {
+            "Emerald": {
                 "brightness": -0.1, "contrast": 0.2, "saturation": 1.5, "sharpness": 0.6, "exposure": 0.0,
                 "halation": 0.0, "vignette": 0.15, "temperature": -0.5, "tint": 0.2, "hue_color": "#00ff3f",
                 "hue_strength": 0.15, "gradient_color1": "#7d97c7", "gradient_color2": "#284e2d", "gradient_intensity": 0.1,
@@ -282,7 +282,7 @@ def main():
 
         
         # Select preset from sidebar
-        preset = st.sidebar.selectbox("Choose a preset", options=["None", "Vintage", "Moody", "Grunge Warm", "Grunge Cool", "Nostalgia"])
+        preset = st.sidebar.selectbox("Choose a preset", options=["None", "Vintage", "Moody", "Moss", "Emerald", "Nostalgia"])
         
         # Get the preset values
         preset_values = presets[preset]
