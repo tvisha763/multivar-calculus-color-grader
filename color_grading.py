@@ -254,10 +254,18 @@ def main():
                 "green_curve1": 0.05, "green_curve2": 0.46, "green_curve3": 0.96,
                 "blue_curve1": 0.04, "blue_curve2": 0.54, "blue_curve3": 1
             },
-            "Grunge": {
-                "brightness": 0.3, "contrast": 0.2, "saturation": 1.1, "sharpness": 0.6, "exposure": -0.1,
-                "halation": 0.02, "vignette": 0.1, "temperature": -0.15, "tint": 0.0, "hue_color": "#00ff3f",
-                "hue_strength": 0.15, "gradient_color1": "#7d97c7", "gradient_color2": "#284e2d", "gradient_intensity": 0.5,
+            "Grunge Warm": {
+                "brightness": -0.1, "contrast": 0.2, "saturation": 1.5, "sharpness": 0.6, "exposure": 0.0,
+                "halation": 0.0, "vignette": 0.15, "temperature": 0.5, "tint": 0.2, "hue_color": "#00ff3f",
+                "hue_strength": 0.15, "gradient_color1": "#7d97c7", "gradient_color2": "#284e2d", "gradient_intensity": 0.1,
+                "red_curve1": 0.0, "red_curve2": 0.43, "red_curve3": 0.94,
+                "green_curve1": 0.05, "green_curve2": 0.51, "green_curve3": 0.96,
+                "blue_curve1": 0.04, "blue_curve2": 0.54, "blue_curve3": 1
+            },
+            "Grunge Cool": {
+                "brightness": -0.1, "contrast": 0.2, "saturation": 1.5, "sharpness": 0.6, "exposure": 0.0,
+                "halation": 0.0, "vignette": 0.15, "temperature": -0.5, "tint": 0.2, "hue_color": "#00ff3f",
+                "hue_strength": 0.15, "gradient_color1": "#7d97c7", "gradient_color2": "#284e2d", "gradient_intensity": 0.1,
                 "red_curve1": 0.0, "red_curve2": 0.43, "red_curve3": 0.94,
                 "green_curve1": 0.05, "green_curve2": 0.51, "green_curve3": 0.96,
                 "blue_curve1": 0.04, "blue_curve2": 0.54, "blue_curve3": 1
@@ -274,7 +282,7 @@ def main():
 
         
         # Select preset from sidebar
-        preset = st.sidebar.selectbox("Choose a preset", options=["None", "Vintage", "Moody", "Grunge", "Nostalgia"])
+        preset = st.sidebar.selectbox("Choose a preset", options=["None", "Vintage", "Moody", "Grunge Warm", "Grunge Cool", "Nostalgia"])
         
         # Get the preset values
         preset_values = presets[preset]
