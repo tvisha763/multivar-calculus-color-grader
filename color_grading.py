@@ -4,7 +4,7 @@ import cv2
 import plotly.graph_objects as go
 
 
-
+@st.cache_data
 def plot_rgb_curves(red_curve, green_curve, blue_curve):
     x_values = np.linspace(0, 1, len(red_curve))
     fig = go.Figure()
@@ -24,7 +24,7 @@ def plot_rgb_curves(red_curve, green_curve, blue_curve):
     )
     return fig
 
-
+@st.cache_resource
 class AdvancedColorGrading:
     def apply_brightness(self, image, exposure):
         exposure_factor = 2 ** exposure
